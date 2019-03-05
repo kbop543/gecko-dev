@@ -1,0 +1,21 @@
+diff --git a/testing/raptor/raptor/raptor.py b/testing/raptor/raptor/raptor.py
+--- a/testing/raptor/raptor/raptor.py
++++ b/testing/raptor/raptor/raptor.py
+@@ -3,6 +3,8 @@
+ # This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/.
++
++
+ from __future__ import absolute_import
+ 
+ import json
+@@ -593,7 +595,7 @@ def main(args=sys.argv[1:]):
+ 
+     # ensure we have at least one valid test to run
+     if len(raptor_test_list) == 0:
+-        LOG.critical("abort: no tests found")
++        LOG.critical("abort: no tests found for the given test: %s" % str(args.test))
+         sys.exit(1)
+ 
+     LOG.info("raptor tests scheduled to run:")
